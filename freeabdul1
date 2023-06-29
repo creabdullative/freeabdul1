@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" class="overflowhidden">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<title>Haxball Play</title>
+	<link type="text/css" rel="stylesheet" href="hhyLXo3K/s/style.css" />
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="container flexRow">
+		<div class="flexCol flexGrow">
+			<div class="header">
+				<span class="title">HaxBall</span>
+				<a href="http://blog.haxball.com">News</a>
+				<a href="play" class="active">Play</a>
+				<a href="about">About</a>
+				<a href="community">Community</a>
+			</div>
+			<iframe src="hhyLXo3K/__cache_static__/g/game.html" class="gameframe flexGrow"></iframe>
+		</div>
+		<!-- Ads -->
+		<div class="rightbar">
+			<SCRIPT language="Javascript">
+			var cpmstar_rnd=Math.round(Math.random()*999999);
+			var cpmstar_pid=26640;
+			document.writeln("<SCR"+"IPT language='Javascript' src='//server.cpmstar.com/view.aspx?poolid="+cpmstar_pid+"&script=1&rnd="+cpmstar_rnd+"'></SCR"+"IPT>");
+			</SCRIPT>
+		</div>
+	</div>
+</body>
+
+</html>
