@@ -1,0 +1,65 @@
+
+</ul>
+</div>
+</nav>
+</div>
+<div class="container mpy__container">
+    <style>
+    .info-msg,
+    .success-msg,
+    .warning-msg,
+    .error-msg {
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 3px 3px 3px 3px;
+    }
+
+    .info-msg {
+        color: #059;
+        background-color: #BEF;
+    }
+
+    .success-msg {
+        color: #270;
+        background-color: #DFF2BF;
+    }
+
+    .warning-msg {
+        color: #9F6000;
+        background-color: #FEEFB3;
+    }
+
+    .error-msg {
+        color: #D8000C;
+        background-color: #FFBABA;
+    }
+</style>
+    
+        <style>
+    .customNavigation{
+        text-align: center;
+    }
+
+      .customNavigation a{
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+      .prevCatBtn{
+          position: absolute;
+          left: -10px;
+          top: 50%;
+          cursor: pointer;
+          z-index: 9999;
+      }
+      .nextCatBtn{
+          position: absolute;
+          right: -10px;
+          top: 50%;
+          cursor: pointer;
+          z-index: 9999;
+      }
+</style>
