@@ -1,0 +1,119 @@
+<div id="mediaSlider"></div>
+    </section>
+    <section id="system">
+        <div class="wrapper">
+          <h3 class="text_shadow">SİSTEM GEREKSİNİMLERİ</h3>
+            <div class="sys_content">
+                <div id="requirements">
+                  <div class="requirements">
+                    <table>
+                      <colgroup>
+                          <col class="name" />
+                          <col class="min" />
+                          <col class="max" />
+                      </colgroup>
+                      <thead>
+                      <tr>
+                          <td></td>
+                          <td>Minimum</td>
+                          <td>Tavsiye edilen</td>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                          <td>OS</td>
+                          <td>Windows 7, Windows 8, Windows 10<br /></td>
+                          <td>Windows 7, Windows 8, Windows 10</td>
+                      </tr>
+                      <tr>
+                          <td>CPU</td>
+                          <td><span>2. Nesil Intel Core i3/i5/i7</span></td>
+                          <td><span>7. Nesil Intel Core i3/i5/i7</span></td>
+                      </tr>
+                      <tr>
+                          <td>RAM</td>
+                          <td><span>1GB</span></td>
+                          <td><span>2 GB</span></td>
+                      </tr>
+                      <tr>
+                          <td>Sabit disk</td>
+                          <td><span>6 GB</span></td>
+                          <td><span>6 GB</span></td>
+                      </tr>
+                      <tr>
+                          <td>Ekran Kartı</td>
+                          <td>512 MB RAM</td>
+                          <td>1 GB RAM</td>
+                      </tr>
+                      <tr>
+                          <td>Ses kartı</td>
+                          <td><span>DirectX 9.0</span> Desteği</td>
+                          <td><span>DirectX 9.0</span> Desteği</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="requirements mobile">
+                    <div class="column min open">
+                        <div onclick='ToggleAccordion(this)' class='head'>Minimum<span class='dropdown'></span></div>
+                        <div class="even">OS</div>
+                        <div class="even">Windows 7, Windows 8, Windows 10<br /></div>
+                        <div>CPU</div>
+                        <div>2. Nesil Intel Core i3/i5/i7</div>
+                        <div class="even">RAM</div>
+                        <div class="even">1GB</div>
+                        <div>Sabit disk</div>
+                        <div>6 GB</div>
+                        <div class="even">Ekran Kartı</div>
+                        <div class="even">512 MB RAM</div>
+                        <div>Ses kartı</div>
+                        <div><span>DirectX 9.0</span> Desteği</div>
+                    </div>
+                    <div class="column max">
+                        <div onclick='ToggleAccordion(this)' class='head'>Tavsiye edilen<span class='dropdown'></span></div>
+                        <div class="even">OS</div>
+                        <div class="even">Windows 7, Windows 8, Windows 10</div>
+                        <div>CPU</div>
+                        <div>7. Nesil Intel Core i3/i5/i7</div>
+                        <div class="even">RAM</div>
+                        <div class="even">2 GB</div>
+                        <div>Sabit disk</div>
+                        <div>6 GB</div>
+                        <div class="even">Ekran Kartı</div>
+                        <div class="even">1 GB RAM</div>
+                        <div>Ses kartı</div>
+                        <div><span>DirectX 9.0</span> Desteği</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="download">
+                <p>İndirme boyutu: <em>1,5 GB</em></p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" data-cookieconsent="ignore">
+        function ToggleAccordion(el) {
+            el = el.parentNode;
+            // close all
+            var siblings = el.parentNode.childNodes;
+
+            for (var i = 0; i < siblings.length; i++) {
+            doResetSiblings(siblings[i], el);
+            }
+
+            if (el.className === "column") {
+            window.setTimeout(function() {
+                el.className += " open";
+            }, 10);
+            } else {
+            el.className = "column";
+            }
+        }
+
+        function doResetSiblings(item, el) {
+            if (item.nodeType === 1 && item !== el) {
+            item.className = "column";
+            }
+        }
+        </script>
+    </section>
