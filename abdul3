@@ -1,0 +1,87 @@
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160064813-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-160064813-1');
+</script>
+
+<script>
+
+
+    $(document).ready(function (e) {
+        //RANDOMIMG
+        var image = new Array();
+        image[0] = "icons_bg.jpg";
+        image[1] = "icons_bg2.jpg";
+        image[2] = "icons_bg3.jpg";
+        image[3] = "icons_bg4.jpg";
+        var size = image.length
+        var x = Math.floor(size * Math.random())
+        $('#random').attr('src', image[x]);
+        //RANDOMIMGFNS
+        /*$.fn.maphilight.defaults = {
+            fill: true,
+            fillColor: '000000',
+            fillOpacity: 0.5,
+            stroke: true,
+            strokeColor: 'ff0000',
+            strokeOpacity: 1,
+            strokeWidth: 4,
+            fade: true,
+            alwaysOn: false,
+            neverOn: false,
+            groupBy: false,
+            wrapClass: true,
+            shadow: false,
+            shadowX: 0,
+            shadowY: 0,
+            shadowRadius: 6,
+            shadowColor: '000000',
+            shadowOpacity: 0.8,
+            shadowPosition: 'outside',
+            shadowFrom: false
+        }*/
+    });
+
+</script>
+<script type="text/javascript">
+
+
+    $('#close_popup').click(function(){
+        $('#poppup').hide();
+
+    });
+    $('#font_up').click(function () {
+        $('#makale p').css("font-size", "+=1");
+    });
+    $('#font_down').click(function () {
+        $('#makale p').css("font-size", "-=1");
+    });
+
+    (function ($) {
+        $(document).ready(function () {
+            $('ul.dropdown-menu [data-bs-toggle=dropdown]').on('click', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                $(this).parent().siblings().removeClass('open');
+                $(this).parent().toggleClass('open');
+            });
+        });
+    })(jQuery);
+
+
+</script>
+
+<script>
+        $(window).on('load',function(){
+        $('#myModal').modal('show');
+        //$('.landing').get(0).play();
+    });
+
+</script>
