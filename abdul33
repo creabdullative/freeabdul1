@@ -1,0 +1,70 @@
+<script type="text/javascript">
+        function isUndefinedNullOrEmpty(s) {
+            return (s === undefined || s === null || s === "");
+        }
+
+        var functionClose = function () {
+        };
+
+        $(function () {
+
+            var updateTarihGorunumuSinavlar = function (sinavSurecTip, sinavYil, basvuruTip) {
+                var viewModel = {
+                    BasvuruSurecTip: sinavSurecTip,
+                    SinavYil: sinavYil,
+                    BasvuruTip: basvuruTip
+                };
+
+                AjaxPost("/IslemTakvimi/TarihGorunumuSinavGetir", ko.toJSON(viewModel),
+                    function (data) {
+                        if (isUndefinedNullOrEmpty(data)) {
+                            var message = kendo.format("Sınavları getirirken hata oluştu. {0}", isUndefinedNullOrEmpty(data) ? "" : data.Hata);
+                            alert(message);
+                            return;
+                        } else if (!data.ReturnStatus) {
+                            $('#sinavTabloCon').html(data.MessageBoxView);
+                            return;
+                        } else {
+                            $('#sinavTabloCon').html(data.TarihGorunumuTabloHtml);
+                            $('.tarih-table #tbl_surec').GridLayout();
+                        }
+                        $('#tbl_surec tr:gt(0)').click(function () {
+                            var surecId = $(this).data('surecid');
+                            var content = $(".sinav-surec-aciklama[data-surecid='" + surecId + "']  ").html();
+
+                            $(this).popup({ popupContent: content, widthPopup: "600", leftPopup: 37, topPopup: 67, onClose: functionClose });
+                            return false;
+                        });
+                        return;
+                    });
+            };
+
+            $('#tbl_surec tr:gt(0)').click(function () {
+                var surecId = $(this).data('surecid');
+                var content = $(".sinav-surec-aciklama[data-surecid='" + surecId + "']  ").html();
+                var functionClose = function () {
+                };
+                $(this).popup({ popupContent: content, widthPopup: "600", leftPopup: 37, topPopup: 67, onClose: functionClose });
+                return false;
+            });
+
+            $('.tarih-table #tbl_surec').GridLayout();
+
+            $('#ddlSinavSurec').change(function () {
+                var selected = $(this).find('option:selected');
+                var basvuruTip = selected.data('val');
+
+                updateTarihGorunumuSinavlar($('#ddlSinavSurec').val(), $('#ddlSinavYil').val(), basvuruTip);
+                if ($('#ddlSinavSurec').val() == 0)
+                    $('#divSinavYil').css('display', 'none');
+                else
+                    $('#divSinavYil').css('display', 'inline');
+            });
+
+            $('#ddlSinavYil').change(function () {
+                var selected = $('#ddlSinavSurec').find('option:selected');
+                var basvuruTip = selected.data('val');
+                updateTarihGorunumuSinavlar($('#ddlSinavSurec').val(), $('#ddlSinavYil').val(), basvuruTip);
+            });
+        });
+    </script>
