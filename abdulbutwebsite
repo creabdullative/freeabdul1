@@ -1,0 +1,27 @@
+<body id="bodyGlobal" class="global_body" data-language="tr" data-currency="try">
+<form method="post" action="./" id="formGlobal">
+<div class="aspNetHidden">
+</div>
+<script type="text/javascript">
+//<![CDATA[
+globalModel.pageType = 'homepage';//]]>
+</script>
+<input name="__RequestVerificationToken" type="hidden" value="IyevyufVMHq7PNG9PY_hgFhpMRlpNq0QW0AVLugxM94bnd7MY-Yyqa_9DzoQbJwYV1PtHOsePeyZNY36wF6wOPVr-6Xvj9cyzVleaADY2gw1" />
+<link href="https://static.ticimax.cloud/30776/CustomCss/ticimax/style.css?v=8.11.243.14000.090705" rel="stylesheet" />
+<style></style>
+<div id="divChromeBildirim" class="insider-opt-in-notification bildirimIzin" style="top: 0px; display: none;">
+<div class="insider-opt-in-notification-inner-container">
+<div class="insider-opt-in-notification-text-container" style="display: none">
+<img src="/Uploads/Images/bildirim-logo.png" alt="Google Bildirim" />
+</div>
+<div class="insider-opt-in-notification-text-container">
+<div class="insider-opt-in-notification-title">{alanadi} masaüstü bildirimlerine ekleyin.</div>
+<div class="insider-opt-in-notification-description">{alanadi} özel fırsatlardan ve güncel kampanyalardan haberiniz olsun ister misiniz?</div>
+</div>
+<div style="clear: both;">
+<div class="insider-opt-in-notification-button-container">
+<a target="_blank" onclick="bildirimRed();" class="insider-opt-in-notification-button insider-opt-in-disallow-button">Daha Sonra</a>
+<a target="_blank" onclick="bildirimKabul();" class="insider-opt-in-notification-button insider-opt-in-allow-button">Evet</a>
+</div>
+<div style="clear: both;"></div>
+</div>
