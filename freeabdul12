@@ -1,0 +1,79 @@
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-27551113-1');
+</script><script type="text/javascript">
+
+$(function() {
+kps	= $(".kitapKatUl").position();
+$(".menuKategoriDiv").css("left",kps.left).css("top",kps.top+45);
+
+$("img.lazy").lazyload({
+    effect: "fadeIn"
+});	
+	bodyHeight	= $("body,html").height();
+
+	whinHeight	= $(window).height();
+	
+		$(window).scroll(function(){
+				bodyScroll	= $(window).scrollTop();
+				if(bodyScroll>whinHeight){
+				$(".yukariCik").fadeIn(300);
+					$(".icon_kitap").css("z-index",1);
+					$("#HediyeKuponKampanyaBlock").css("bottom",70);
+					
+					}else{
+					$(".yukariCik").fadeOut(300);
+					$(".icon_kitap").css("z-index",999);
+					$("#HediyeKuponKampanyaBlock").css("bottom",20);
+				}
+				if(bodyScroll>10){
+					$(".icon_kitap").css("z-index",1);
+				}else{
+					$(".icon_kitap").css("z-index",999);
+				}
+				
+
+		});
+		
+			
+
+		
+		$(".yukariCik").click(function(){
+					$("body,html").animate({scrollTop:"0"},700);
+		});
+		
+
+        
+var tooltips = $(".tool[title]" ).tooltip({
+position: {
+my: "left top",
+at: "right+5 top-5"
+}
+});
+
+
+ $(".tool1[title]").tooltip({
+position: {
+my: "center bottom-20",
+at: "center top",
+using: function( position, feedback ) {
+$( this ).css( position );
+$( "<div>" )
+.addClass( "arrowTool" )
+.addClass( feedback.vertical )
+.addClass( feedback.horizontal )
+.appendTo( this );
+}
+}
+});
+
+
+
+});
+
+
+
+
+</script>
