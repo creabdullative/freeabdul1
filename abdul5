@@ -1,0 +1,44 @@
+<script>
+        $('#ebulletinSubmit').on('click', function (e) {
+            e.preventDefault();
+            var form = $(this).closest('form');
+            var email = form.find("[name='email']");
+            var kvkk = form.find("[name='kvkk']");
+
+            var errors = "";
+            if (!validateEmail(email.val())) {
+                errors += "<li>Eposta adresini kontrol ediniz!</li>";
+            }
+            if (!kvkk.is(':checked')) {
+                errors += "<li>KVKK Sözleşmesini onaylamanız gerekmektedir!</li>"
+            }
+
+            if (errors != "") {
+                $('.alert').addClass('alert-danger');
+                $('.alert > ul').html(errors);
+                $('.alert').removeClass('d-none');
+            } else {
+
+                var formData = {
+                    'email': email.val(),
+                    '_token': "Y30HDNKd3Uq9EyrjfU29XZvHRYCZZLYUmeZWqtlm"
+                }
+
+                $.ajax({
+                    'url': "https://www.gaziantep.bel.tr/ebulletinSender",
+                    'data': formData,
+                    'method': "POST",
+                    success: function (response) {
+                        console.log(response);
+                        $('.alert').removeClass('alert-danger').addClass('alert-success').removeClass('d-none');
+                        $('.alert > ul').html("<li>Ebülten kaydı başarılı!</li>");
+                    }
+                })
+            }
+        })
+
+        function validateEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
